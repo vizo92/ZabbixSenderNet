@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Ysq.Zabbix
@@ -21,7 +22,7 @@ namespace Ysq.Zabbix
             _port = port;
         }
 
-        public SenderResponse Send(string host, string itemKey, string value)
+        public SenderResponse Send(string host, string itemKey, string value, int timeout = 500)
         {
             dynamic req = new ExpandoObject();
             req.request = "sender data";
@@ -34,11 +35,28 @@ namespace Ysq.Zabbix
             using (var tcpClient = new TcpClient(_zabbixServer, _port))
             using(var networkStream = tcpClient.GetStream())
             {
-                var writer = new BinaryWriter(networkStream);
-                writer.Write(jsonReq);
-                writer.Flush();
-                var res = new BinaryReader(networkStream).ReadString();
-                return JsonConvert.DeserializeObject<SenderResponse>(res);
+                var data = Encoding.ASCII.GetBytes(jsonReq);
+                networkStream.Write(data, 0, data.Length);
+                networkStream.Flush();
+                var counter = 0;
+                while(!networkStream.DataAvailable)
+                {
+                    if (counter < timeout/50)
+                    {
+                        counter++;
+                        Thread.Sleep(50);
+                    }
+                    else
+                    {
+                        throw new TimeoutException();
+                    }
+                }
+
+                var resbytes = new Byte[1024];
+                networkStream.Read(resbytes, 0, resbytes.Length);
+                var s = Encoding.UTF8.GetString(resbytes);
+                var jsonRes = s.Substring(s.IndexOf('{'));
+                return JsonConvert.DeserializeObject<SenderResponse>(jsonRes);
             }       
         }
     }

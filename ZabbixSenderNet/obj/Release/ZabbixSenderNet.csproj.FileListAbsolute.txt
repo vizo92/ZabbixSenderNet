@@ -1,0 +1,7 @@
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Release\ZabbixSender.dll
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Release\ZabbixSender.pdb
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Release\Newtonsoft.Json.dll
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Release\Newtonsoft.Json.xml
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Release\ZabbixSenderNet.csprojResolveAssemblyReference.cache
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Release\ZabbixSender.dll
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Release\ZabbixSender.pdb
