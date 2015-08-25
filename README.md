@@ -1,8 +1,5 @@
 # ZabbixSenderNet
-Zabbix Sender Library for .Net Framework
-
-# Overview
-ZabbixSenderNet implements [Zabbix Sender Protocol 2.0](https://www.zabbix.org/wiki/Docs/protocols/zabbix_sender/2.0).
+ZabbixSenderNet implements [Zabbix Sender Protocol 2.0](https://www.zabbix.org/wiki/Docs/protocols/zabbix_sender/2.0) by C#. .NET Framework 4.0 or later is required.
 
 # Interface
 Zabbix.Sender class has a constructorand a public method.
@@ -17,7 +14,7 @@ public Sender(string zabbixServer, int port = 10051)
 ///           the method throws System.TimeoutException.
 public SenderResponse Send(string host, string itemKey, string value, int timeout = 500)
 ```
-# Usage
+# Example
 
 ```C#
 var zabbixServer = "192.168.0.1";
