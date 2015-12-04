@@ -1,7 +1,6 @@
-c:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Debug\ZabbixSenderNet.csprojResolveAssemblyReference.cache
-c:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\ZabbixSender.dll
-c:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\ZabbixSender.pdb
-c:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\Newtonsoft.Json.dll
-c:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\Newtonsoft.Json.xml
-c:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Debug\ZabbixSender.dll
-c:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Debug\ZabbixSender.pdb
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\ZabbixSender.dll
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\ZabbixSender.pdb
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\Newtonsoft.Json.dll
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\Newtonsoft.Json.xml
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Debug\ZabbixSender.dll
+C:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Debug\ZabbixSender.pdb
