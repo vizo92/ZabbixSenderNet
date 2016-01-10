@@ -10,9 +10,9 @@ PM> Install-Package ZabbixSender
 ```
 
 # Interface
-Zabbix.Sender class has a constructorand a public method.
 ```C#
-/// zabbixServer is FQDN or IP address of your Zabbix server instance. Default port is 10051.
+/// zabbixServer: FQDN or IP address of your Zabbix server instance 
+/// port        : TCP port number of Zabbix server
 public Sender(string zabbixServer, int port = 10051)
 
 /// host    : monitored host name
