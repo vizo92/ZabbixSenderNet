@@ -11,14 +11,14 @@ PM> Install-Package ZabbixSender
 
 # Interface
 ```C#
-/// zabbixServer: FQDN or IP address of your Zabbix server instance 
+/// zabbixServer: FQDN or IP address of Zabbix server instance 
 /// port        : TCP port number of Zabbix server
 public Sender(string zabbixServer, int port = 10051)
 
 /// host    : monitored host name
 /// itemKey : Zabbix Trapper item key
 /// value   : value to send
-/// timeout : TCP recv timeout. If Zabbix server doesn't respond the request, 
+/// timeout : (Optional) TCP recv timeout. If Zabbix server doesn't respond the request, 
 ///           the method throws System.TimeoutException.
 public SenderResponse Send(string host, string itemKey, string value, int timeout = 500)
 ```
