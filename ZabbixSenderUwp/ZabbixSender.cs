@@ -34,8 +34,8 @@ namespace Ysq.Zabbix
                 using (var networkStream = tcpClient.GetStream())
                 {
                     var data = Encoding.ASCII.GetBytes(jsonReq);
-                    networkStream.Write(data, 0, data.Length);
-                    networkStream.Flush();
+                    await networkStream.WriteAsync(data, 0, data.Length);
+                    await networkStream.FlushAsync();
                     var counter = 0;
                     while (!networkStream.DataAvailable)
                     {
@@ -51,7 +51,7 @@ namespace Ysq.Zabbix
                     }
 
                     var resbytes = new Byte[1024];
-                    networkStream.Read(resbytes, 0, resbytes.Length);
+                    await networkStream.ReadAsync(resbytes, 0, resbytes.Length);
                     var s = Encoding.UTF8.GetString(resbytes);
                     var jsonRes = s.Substring(s.IndexOf('{'));
                     return JsonConvert.DeserializeObject<SenderResponse>(jsonRes);
