@@ -1,6 +1,0 @@
-C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\ZabbixSender.dll
-C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\ZabbixSender.pdb
-C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\Newtonsoft.Json.dll
-C:\projects\ZabbixSenderNet\ZabbixSenderNet\bin\Debug\Newtonsoft.Json.xml
-C:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Debug\ZabbixSender.dll
-C:\projects\ZabbixSenderNet\ZabbixSenderNet\obj\Debug\ZabbixSender.pdb
