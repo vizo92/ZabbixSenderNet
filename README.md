@@ -9,6 +9,12 @@ NuGet package is available [here](https://www.nuget.org/packages/ZabbixSender/).
 PM> Install-Package ZabbixSender
 ```
 
+UWP version:
+
+```PowerShell
+PM> Install-Package ZabbixSenderUwp
+```
+
 # Interface
 ```C#
 /// zabbixServer: FQDN or IP address of Zabbix server instance 
