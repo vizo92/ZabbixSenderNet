@@ -36,7 +36,22 @@ namespace Ysq.Zabbix
             using(var networkStream = tcpClient.GetStream())
             {
                 var data = Encoding.ASCII.GetBytes(jsonReq);
-                networkStream.Write(data, 0, data.Length);
+                byte[] zabxHeader = Encoding.ASCII.GetBytes("ZBXD");
+
+                byte[] header = new byte[] {
+                    zabxHeader[0],zabxHeader[1],zabxHeader[2],zabxHeader[3], 1,
+                    (byte)(data.Length & 0xFF),
+                    (byte)((data.Length >> 8) & 0xFF),
+                    (byte)((data.Length >> 16) & 0xFF),
+                    (byte)((data.Length >> 24) & 0xFF),
+                    0, 0, 0, 0};
+
+                byte[] finalDataArray = new byte[header.Length + data.Length];
+
+                System.Buffer.BlockCopy(header, 0, finalDataArray, 0, header.Length);
+                System.Buffer.BlockCopy(data, 0, finalDataArray, header.Length, data.Length);
+
+                networkStream.Write(finalDataArray, 0, finalDataArray.Length);
                 networkStream.Flush();
                 var counter = 0;
                 while(!networkStream.DataAvailable)
